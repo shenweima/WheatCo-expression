@@ -9,5 +9,9 @@ conda create -n camoco_env python=3.6
 source activate camoco_env
 pip install numpy
 pip install camoco
+source deactivate # exit environment
 ```
 #### 2 Start
+```
+source activate camoco_env # start environment
+```
