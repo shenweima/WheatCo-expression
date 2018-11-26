@@ -13,8 +13,9 @@ source deactivate # exit environment
 ```
 #### 2 Start
 ``` shell
-# start environment
+# Start environment
 source activate camoco_env 
-# buid a RefGen Object
-camoco build-refgen IWGSC_v1.1_HC_and_LC.gff "TaIWGSCv1.1" "IWGSCv1.1 from Chinese Spring" 1.1 "Triticum aestivum"
+# Buid a RefGen Object
+# The gff3 file which only contained 107891 high confidence genes was download from Ensembl Plants release 41
+camoco build-refgen --ID-attr gene_id Triticum_aestivum.IWGSC.41.gff3 "TaIWGSCv1.1" "IWGSCv1.1 from Chinese Spring" 1.1 "Triticum aestivum" 
 ```
