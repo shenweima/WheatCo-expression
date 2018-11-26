@@ -12,6 +12,9 @@ pip install camoco
 source deactivate # exit environment
 ```
 #### 2 Start
-```
-source activate camoco_env # start environment
+``` shell
+# start environment
+source activate camoco_env 
+# buid a RefGen Object
+camoco build-refgen IWGSC_v1.1_HC_and_LC.gff "TaIWGSCv1.1" "IWGSCv1.1 from Chinese Spring" 1.1 "Triticum aestivum"
 ```
