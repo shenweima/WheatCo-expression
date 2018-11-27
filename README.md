@@ -24,5 +24,5 @@ camoco build-refgen --ID-attr gene_id Triticum_aestivum.IWGSC.41.gff3 "TaIWGSCv1
 #### Build a COB object (co-expression network)
 ```shell
 # Here, co-expression network was constructed only used HC (high confidence) genes in wheat.
-camoco build-cob --index-col GeneID -–rawtype RNASEQ --min-expr 0.1 --min-single-sample-expr 5 PRJEB25639_HC_tpm_mean.tsv TaBCSdevelopment "Development of Triticum aestivum L. cv. BCS" TaIWGSCv1.1
+camoco build-cob --index-col GeneID -–rawtype RNASEQ --min-expr 0.1 --min-single-sample-expr 5 PRJEB25639_HC_tpm_mean.tsv TaBCSDEV "Development of Triticum aestivum L. cv. BCS" TaIWGSCv1.1
 ```
