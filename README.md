@@ -9,6 +9,7 @@ conda create -n camoco_env python=3.6
 source activate camoco_env
 pip install numpy
 pip install camoco
+# camoco version: 0.6.1
 source deactivate # exit environment
 ```
 #### 2 Start
@@ -17,5 +18,12 @@ source deactivate # exit environment
 source activate camoco_env 
 # Buid a RefGen Object
 # The gff3 file which only contained 107891 high confidence genes was download from Ensembl Plants release 41
+
 camoco build-refgen --ID-attr gene_id Triticum_aestivum.IWGSC.41.gff3 "TaIWGSCv1.1" "IWGSCv1.1 from Chinese Spring" 1.1 "Triticum aestivum" 
+```
+#### Build a COB object (co-expression network)
+```shell
+# Here, co-expression network was constructed only used HC (high confidence) genes in wheat.
+
+camoco build-cob --min-expr 0.5 --min-single-sample-expr 5 BCS_HC_genes_tpm.tsv TaBCSdevelopment "Development of Triticum aestivum L. cv. BCS" TaIWGSCv1.1
 ```
