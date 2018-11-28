@@ -1,5 +1,5 @@
 # WheatCo-expression
-build co-expression network for wheat
+building co-expression network for wheat
 
 A paper named ["Integrating Co-Expression Networks with GWAS to Prioritize Causal Genes in Maize"](http://www.plantcell.org/content/early/2018/11/09/tpc.18.00299) was published on the plant cell journal. This paper combined GWAS data and co-expression data for key genes mining in maize. I want to use this method in wheat.
 
@@ -24,5 +24,14 @@ camoco build-refgen --ID-attr gene_id Triticum_aestivum.IWGSC.41.gff3 "TaIWGSCv1
 #### Build a COB object (co-expression network)
 ```shell
 # Here, co-expression network was constructed only used HC (high confidence) genes in wheat.
-camoco build-cob --index-col GeneID -–rawtype RNASEQ --min-expr 0.1 --min-single-sample-expr 5 PRJEB25639_HC_tpm_mean.tsv TaBCSDEV "Development of Triticum aestivum L. cv. BCS" TaIWGSCv1.1
+camoco build-cob --index-col GeneID --rawtype RNASEQ --min-expr 0.1 --min-single-sample-expr 5 --max-gene-missing-data 0.9 PRJEB25639_HC_tpm_mean.tsv TaBCSDEV "Development of Triticum aestivum L. cv. BCS" TaIWGSCv1.1
+```
+#### Building Ontology Datasets
+```shell
+$ camoco build-go IWGSC_v1.1_HC_go.txt go.obo "TaGO" "wheat HC GO" TaIWGSCv1.1
+
+```
+#### Building a GWAS Object
+```shell
+
 ```
